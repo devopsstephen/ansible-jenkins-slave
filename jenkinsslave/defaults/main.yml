@@ -1,0 +1,30 @@
+---
+# jenkins master
+master_username: devops
+master_password: devops
+master_port: 8080
+master_url: "http://13.235.79.151:{{ master_port }}"
+
+# general slave
+slave_agent_name: cnsislave
+slave_executors_num: 1
+slave_environments: {}
+slave_mode_exclusive: false
+
+# jenkins linux slave
+slave_linux_host: 52.66.235.89
+slave_linux_ssh_port: 22
+slave_linux_home: /home/jenkins
+slave_linux_jenkins_cred_id: ci_slave
+slave_linux_jenkins_username: jenkins
+slave_linux_jenkins_password: jenkins
+slave_linux_jenkins_public_key: ""
+slave_linux_user_group: jenkins
+slave_linux_labels:
+  - apple
+slave_linux_selinux_ports: "{{ master_port }},49187,\
+{{ slave_linux_ssh_port }}"
+
+maven_home_parent_directory: /app/maven
+java_home_parent_directory: /app/java
+repo_name: git
