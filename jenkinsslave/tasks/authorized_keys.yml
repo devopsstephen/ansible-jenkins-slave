@@ -1,0 +1,24 @@
+---
+ - name: make direcotry
+   file:
+      path: "/home/jenkins/.ssh"
+      owner: jenkins
+      group: jenkins
+      state: directory
+      mode: '0700'
+ - name: create empty file
+   file:
+      path: "/home/jenkins/.ssh/authorized_keys"
+      owner: jenkins
+      group: jenkins
+      state: touch
+      mode: '0600'
+
+ - name: put pubkey
+   lineinfile:
+      path: "/home/jenkins/.ssh/authorized_keys"
+      line: "{{ root_jenkins_pubkey }}"
+ - name: put pubkey
+   lineinfile:
+      path: "/home/jenkins/.ssh/authorized_keys"
+      line: "{{ jenkins_pubkey }}"
