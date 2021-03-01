@@ -1,10 +1,10 @@
 SSH Connection failed with IOException: "Key exchange was not finished, connection is closed.", retrying in 10 seconds. There are 18 more retries left.
 a---
 # jenkins master
-master_username: theetis
+master_username: xyz
 master_password: Devops@123
 master_port: 8080
-master_url: "http://172.29.17.220:{{ master_port }}"
+master_url: "http://ip:{{ master_port }}"
 
 # general slave
 slave_agent_name: cnsislave
